@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+// S9 Example 02
 
 void main() {
+  print('hello World');
+
   runApp(Example02());
 }
 
