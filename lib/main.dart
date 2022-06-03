@@ -14,15 +14,77 @@ class Example02 extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Example 02  '),
         ),
-        body: Column(
-          children: [
-            _buildColumn(),
-            _buildRow(),
-            _buildIcons(),
-            _buildImage(),
-          ],
-        ),
+        body: _buildGridView(),
       ),
+    );
+  }
+}
+
+class _buildGridView extends StatelessWidget {
+  const _buildGridView({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+      ),
+      children: [
+        Card(
+          color: Colors.green,
+          child: Text(
+            '1',
+            style: TextStyle(color: Colors.white, fontSize: 30),
+          ),
+        ),
+        Card(
+          color: Colors.green,
+          child: Text(
+            '2',
+            style: TextStyle(color: Colors.white, fontSize: 30),
+          ),
+        ),
+        Card(
+          color: Colors.green,
+          child: Text(
+            '3',
+            style: TextStyle(color: Colors.white, fontSize: 30),
+          ),
+        ),
+        Card(
+          color: Colors.green,
+          child: Text(
+            '4',
+            style: TextStyle(color: Colors.white, fontSize: 30),
+          ),
+        )
+      ],
+    );
+  }
+}
+
+//_buidListView()
+class _buidListView extends StatelessWidget {
+  const _buidListView({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        Card(
+          child: ListTile(title: Text('List Item 1')),
+        ),
+        Card(
+          child: ListTile(title: Text('List Item 2')),
+        ),
+        Card(
+          child: ListTile(title: Text('List Item 3')),
+        ),
+      ],
     );
   }
 }
